@@ -1,0 +1,14 @@
+version: '3'
+services:
+    mysql:
+        image: "mysql:8"
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "kiritan"
+            MYSQL_DATABASE: "kiritan"
+            MYSQL_USER: "kiritan"
+            MYSQL_PASSWORD: "kiritan"
+        volumes:
+            - ./docker/mysql/data:/var/lib/mysql
+            - ./docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
