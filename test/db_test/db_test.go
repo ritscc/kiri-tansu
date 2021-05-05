@@ -28,7 +28,7 @@ func Test_DB(t *testing.T) {
 		return
 	}
 	test_db_user(db, t)
-// 	test_db_tag(db, t)
+	test_db_tag(db, t)
 
 }
 

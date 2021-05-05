@@ -9,6 +9,18 @@ import (
 )
 
 func test_db_user(db *gorm.DB, t *testing.T) {
+
+	result := db.Create(&model.User{
+		ID: 1,
+		Nickname: "Hoge",
+		Role: 1,
+	}).Error
+
+	if result != nil {
+		t.Error(result)
+		return
+	}
+
 	testCases := []struct {
 		expected model.User
 	}{

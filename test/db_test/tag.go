@@ -1,23 +1,33 @@
 package db
 
 import (
+	"gorm.io/gorm"
 	"reflect"
 	model "ritscc/kiri-tansu/db/model"
 	"testing"
-	"gorm.io/gorm"
 )
 
 func test_db_tag(db *gorm.DB, t *testing.T) {
+	result := db.Create(&model.Tag{
+		ID:   1,
+		Name: "book",
+		CreatedBy: 1,
+		UpdatedBy: 1,
+	}).Error
+
+	if result != nil {
+		t.Error(result)
+		return
+	}
+
 	testCases := []struct {
 		expected model.Tag
 	}{
 		{
 			expected: model.Tag{
-				ID:       1,
-				Name: "book",
-				CreatedAt: stringToTime("Jan 2, 2006 at 3:04pm (JST)"),
+				ID:        1,
+				Name:      "book",
 				CreatedBy: 1,
-				UpdatedAt: stringToTime("Feb 3, 2013 at 7:54pm (JST)"),
 				UpdatedBy: 1,
 			},
 		},
@@ -27,7 +37,19 @@ func test_db_tag(db *gorm.DB, t *testing.T) {
 		var actual model.Tag
 		db.First(&actual)
 		expected := testCase.expected
-		if !reflect.DeepEqual(actual, expected) {
+		if !reflect.DeepEqual(actual.ID, expected.ID) {
+			t.Errorf("errorNumber:%d actual: %v, expect: %v", i, actual, expected)
+		}
+
+		if !reflect.DeepEqual(actual.Name, expected.Name) {
+			t.Errorf("errorNumber:%d actual: %v, expect: %v", i, actual, expected)
+		}
+
+		if !reflect.DeepEqual(actual.CreatedBy, expected.CreatedBy) {
+			t.Errorf("errorNumber:%d actual: %v, expect: %v", i, actual, expected)
+		}
+
+		if !reflect.DeepEqual(actual.UpdatedBy, expected.UpdatedBy) {
 			t.Errorf("errorNumber:%d actual: %v, expect: %v", i, actual, expected)
 		}
 	}

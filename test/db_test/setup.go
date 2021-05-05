@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/mysql"
-	"time"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 )
 
@@ -71,10 +70,4 @@ func ResetBD() {
 	}
 
 	db.Close()
-}
-
-func stringToTime(str string) time.Time {
-	var layout = "2006-01-02 15:04:05"
-    t, _ := time.Parse(layout, str)
-    return t
 }
