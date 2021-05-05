@@ -29,6 +29,7 @@ func Test_DB(t *testing.T) {
 	}
 	test_db_user(db, t)
 	test_db_tag(db, t)
+	test_db_item(db, t)
 
 }
 

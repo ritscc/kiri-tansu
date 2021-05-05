@@ -5,7 +5,7 @@ import (
 )
 
 type Tag struct {
-	ID int
+	ID int `gorm:"primaryKey;autoIncrement:true"`
 	Name string
 	CreatedAt time.Time
 	CreatedBy int
