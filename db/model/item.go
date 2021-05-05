@@ -5,13 +5,13 @@ import (
 )
 
 type Item struct {
-	Id int
+	ID int
 	Name string
 	Overview string
 	Icon byte
 	Type int
-	Created_at *time.Time
-	Created_by int
-	Updated_at *time.Time
-	Updated_by int
+	CreatedAt time.Time
+	CreatedBy int
+	UpdatedAt time.Time
+	UpdatedBy int
 }

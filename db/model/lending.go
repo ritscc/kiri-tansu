@@ -5,11 +5,11 @@ import (
 )
 
 type Lending struct {
-	User_id int
-	Item_id int
-	Returned_at *time.Time
-	Created_at *time.Time
-	Created_by int
-	Updated_at *time.Time
-	Updated_by int
+	UserID int
+	ItemID int
+	ReturnedAt time.Time
+	CreatedAt time.Time
+	CreatedBy int
+	UpdatedAt time.Time
+	UpdatedBy int
 }

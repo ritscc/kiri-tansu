@@ -5,10 +5,10 @@ import (
 )
 
 type Reservation struct {
-	User_id int
-	Item_id int
-	Created_at *time.Time
-	Created_by int
-	Updated_at *time.Time
-	Updated_by int
+	UserID int
+	ItemID int
+	CreatedAt time.Time
+	CreatedBy int
+	UpdatedAt time.Time
+	UpdatedBy int
 }

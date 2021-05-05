@@ -4,8 +4,8 @@ import (
 	"time"
 )
 
-type Password_reset_user struct {
-	User_id int
-	Reset_hash string
-	Expired_at *time.Time
+type PasswordResetUser struct {
+	UserID int
+	ResetHash string
+	ExpiredAt time.Time
 }

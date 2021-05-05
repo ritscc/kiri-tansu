@@ -4,11 +4,11 @@ import (
 	"time"
 )
 
-type Ldap_user struct {
-	User_id int
-	Ldap_id int
-	Created_at *time.Time
-	Created_by int
-	Updated_at *time.Time
-	Updated_by int
+type LdapUser struct {
+	UserID int
+	LdapID int
+	CreatedAt time.Time
+	CreatedBy int
+	UpdatedAt time.Time
+	UpdatedBy int
 }

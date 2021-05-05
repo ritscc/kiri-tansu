@@ -4,11 +4,11 @@ import (
 	"time"
 )
 
-type Password_user struct {
-	User_id int
-	Mail_address string
+type PasswordUser struct {
+	UserID int
+	MailAddress string
 	Password string
-	Is_look bool
-	Created_at *time.Time
-	Updated_by int
+	IsLook bool
+	CreatedAt time.Time
+	UpdatedBy int
 }
