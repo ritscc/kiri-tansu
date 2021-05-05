@@ -5,7 +5,7 @@ import (
 )
 
 type Tag struct {
-	Id int
+	ID int
 	Name string
 	CreatedAt time.Time
 	CreatedBy int
