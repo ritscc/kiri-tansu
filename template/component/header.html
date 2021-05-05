@@ -1,0 +1,25 @@
+{{define "header"}}
+<header>
+  <nav class="navbar navbar-dark">
+    <a class="navbar-brand" href="/">Kiri-Tansu</a>
+    <div class="d-flex">
+      <form class="d-flex me-2">
+        <input class="form-control me-2" type="search" placeholder="検索ワード" aria-label="検索ワード">
+        <button class="btn btn-outline-light" type="submit" style="white-space: nowrap;">検索</button>
+      </form>
+      <div class="dropdown">
+        <a class="btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#">ログイン</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+{{end}}

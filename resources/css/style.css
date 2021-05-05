@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #563d7c;
+  padding: .5rem 1rem;
+}
+
+.bg-theme {
+  background-color: #563d7c;
+}
+
+@media(max-width: 991.98px) {
+  .navbar{
+    padding: .5rem
+  }
+}

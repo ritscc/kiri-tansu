@@ -1,40 +1,20 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
-
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database/mysql"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	"net/http"
+	"ritscc/kiri-tansu/controller"
+	migration "ritscc/kiri-tansu/db/migration"
 )
 
 func main() {
-	db, err := sql.Open("mysql", "kiritan:kiritan@tcp(localhost:3306)/kiritan")
-
-	if err != nil {
-		fmt.Println("DBの接続に失敗しました")
-		fmt.Printf("%s\n", err)
+	// マイグレーション
+	if err := migration.Migrate(); err != nil {
 		return
 	}
 
-	driver, err := mysql.WithInstance(db, &mysql.Config{})
+	// ルーティング
+	controller.Routing()
 
-	if err != nil {
-		fmt.Println("Hoge")
-		fmt.Printf("%s\n", err)
-		return
-	}
-
-	m, err := migrate.NewWithDatabaseInstance("file://db/migration", "mysql", driver)
-	if err != nil {
-		fmt.Printf("%s\n", err)
-		return
-	}
-
-	err = m.Up()
-	if err != nil && err != migrate.ErrNoChange {
-		fmt.Printf("%s\n", err)
-		return
-	}
+	// サーバ起動
+	http.ListenAndServe(":8080", nil)
 }
