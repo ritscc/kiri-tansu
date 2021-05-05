@@ -5,7 +5,7 @@ import (
 )
 
 type PasswordUser struct {
-	UserID int
+	UserID int `gorm:"primaryKey"`
 	MailAddress string
 	Password string
 	IsLook bool

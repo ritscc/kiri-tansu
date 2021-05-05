@@ -5,7 +5,7 @@ import (
 )
 
 type LdapUser struct {
-	UserID int
+	UserID int `gorm:"primaryKey"`
 	LdapID int
 	CreatedAt time.Time
 	CreatedBy int

@@ -5,7 +5,7 @@ import (
 )
 
 type Item struct {
-	ID int
+	ID int `gorm:"primaryKey"`
 	Name string
 	Overview string
 	Icon byte

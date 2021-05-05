@@ -5,8 +5,8 @@ import (
 )
 
 type Reservation struct {
-	UserID int
-	ItemID int
+	UserID int `gorm:"primaryKey"`
+	ItemID int `gorm:"primaryKey"`
 	CreatedAt time.Time
 	CreatedBy int
 	UpdatedAt time.Time

@@ -5,7 +5,7 @@ import (
 )
 
 type PasswordResetUser struct {
-	UserID int
+	UserID int `gorm:"primaryKey"`
 	ResetHash string
 	ExpiredAt time.Time
 }

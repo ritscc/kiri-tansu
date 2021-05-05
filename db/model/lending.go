@@ -5,8 +5,8 @@ import (
 )
 
 type Lending struct {
-	UserID int
-	ItemID int
+	UserID int `gorm:"primaryKey"`
+	ItemID int `gorm:"primaryKey"`
 	ReturnedAt time.Time
 	CreatedAt time.Time
 	CreatedBy int
