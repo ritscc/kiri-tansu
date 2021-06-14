@@ -9,6 +9,19 @@ services:
             MYSQL_DATABASE: "kiritan"
             MYSQL_USER: "kiritan"
             MYSQL_PASSWORD: "kiritan"
+            TZ: "Asia/Tokyo"
         volumes:
             - ./docker/mysql/data:/var/lib/mysql
+            - ./docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
+
+    mysql_test:
+        image: "mysql:8"
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "kiritan"
+            MYSQL_DATABASE: "kiritan"
+            MYSQL_USER: "kiritan"
+            MYSQL_PASSWORD: "kiritan"
+        volumes:
             - ./docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
