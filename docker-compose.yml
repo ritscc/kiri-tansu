@@ -9,6 +9,7 @@ services:
             MYSQL_DATABASE: "kiritan"
             MYSQL_USER: "kiritan"
             MYSQL_PASSWORD: "kiritan"
+            TZ: "Asia/Tokyo"
         volumes:
             - ./docker/mysql/data:/var/lib/mysql
             - ./docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
